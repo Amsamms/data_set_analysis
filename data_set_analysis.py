@@ -40,8 +40,9 @@ else:
     
 if data is not None:
     if st.button('Generate report'):
-        profile = ProfileReport(df_raw, title="Pandas Profiling Report")
-        profile.to_file("your_report.html")
+        with st.spinner('Generating report...'):
+            profile = ProfileReport(df_raw, title="Pandas Profiling Report")
+            profile.to_file("your_report.html")
 
         with open("your_report.html", "rb") as f:
             st.download_button(label="Download report", data=f, file_name="your_report.html", mime="text/html")       
