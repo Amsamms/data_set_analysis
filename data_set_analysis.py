@@ -25,14 +25,6 @@ else:
     st.write('*Kindly upload a data set for quick analysis')
     
 if data is not None:
-   # profile = ProfileReport(df_raw, title="Pandas Profiling Report")
-    #profile.to_widgets()
-    #if st.button('Generate report and download'):
-    #    profile = ProfileReport(df_raw, title="Pandas Profiling Report")
-    #    profile.to_file("your_report.html")
-    #    b64 = base64.b64encode(profile_html.encode()).decode()  # some strings <-> bytes conversions necessary here
-    #    href = f'<a href="data:text/html;base64,{b64}" download="profile.html">Download profile report</a>'
-    #    st.markdown(href, unsafe_allow_html=True)
     if st.button('Generate report'):
         profile = ProfileReport(df_raw, title="Pandas Profiling Report")
         profile.to_file("your_report.html")
